@@ -3,24 +3,24 @@ class Solution:
         dictionary = set(wordDict)
         memo = {}
         
-        def explore(s):
-            if not s: return [[]]
-            if s in memo: return memo[s]
+        def explore(start):
+            if start >= len(s): return [[]]
+            if start in memo: return memo[start]
             
             res = []
             
-            for end in range(1, len(s) + 1):
-                currWord = s[:end]
+            for end in range(start, len(s) + 1):
+                currWord = s[start:end]
                 
                 if currWord in dictionary:
-                    prevArr = explore(s[end:])
+                    prevArr = explore(end)
                     for sub in prevArr:
                         res.append([currWord, *sub])
             
-            memo[s] = res
+            memo[start] = res
             return res
         
-        return [" ".join(words) for words in explore(s)]
+        return [" ".join(words) for words in explore(0)]
         
         
 #     Notes:
