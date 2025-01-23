@@ -22,7 +22,7 @@ class Solution {
             dfs(heights, r, 0, pac, 0);
             dfs(heights, r, cols - 1, atl, 0);
         }
-        System.out.println(pac);
+        
         List<List<Integer>> res = new ArrayList<>();
         for(Cords cord : pac) {
             if(atl.contains(cord)) {
