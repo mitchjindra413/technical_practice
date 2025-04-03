@@ -1,4 +1,4 @@
-// Last updated: 4/1/2025, 9:15:44 PM
+// Last updated: 4/3/2025, 1:16:12 PM
 class Solution {
     public long maximumTripletValue(int[] nums) {
         long res = 0;
